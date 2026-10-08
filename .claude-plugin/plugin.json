@@ -1,0 +1,7 @@
+{
+  "name": "ticket-workflow",
+  "description": "Jira ticket intake gate plus session offload/resume. Blocks code changes until a ticket digest is approved, then checkpoints state to PLAN.md and TODO.md across context resets.",
+  "version": "1.0.0",
+  "author": { "name": "Albert Campos" },
+  "keywords": ["jira", "workflow", "context", "intake", "handoff"]
+}

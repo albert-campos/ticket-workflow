@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "timeout": 5,
+            "command": "p=$(printf '%s' \"${TICKET_PREFIX:-isi}\" | tr 'A-Z' 'a-z'); t=$(grep -oiE \"${p}[-_]?[0-9]{3,5}\" | head -1); [ -n \"$t\" ] && printf '{\"hookSpecificOutput\":{\"hookEventName\":\"UserPromptSubmit\",\"additionalContext\":\"[Intake gate] Ticket %s detected. Run the intake skill before touching code.\"}}' \"$t\"; exit 0"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "timeout": 5,
+            "command": "p=$(printf '%s' \"${TICKET_PREFIX:-isi}\" | tr 'A-Z' 'a-z'); b=$(git branch --show-current 2>/dev/null); t=$(printf '%s' \"$b\" | grep -oiE \"${p}[-_]?[0-9]{3,5}\" | head -1); [ -n \"$t\" ] && printf '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"[Intake gate] Branch %s references ticket %s. Run the intake skill before touching code.\"}}' \"$b\" \"$t\"; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}

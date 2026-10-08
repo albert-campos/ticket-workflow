@@ -1,0 +1,11 @@
+{
+  "name": "ticket-workflow-marketplace",
+  "owner": { "name": "Albert Campos" },
+  "plugins": [
+    {
+      "name": "ticket-workflow",
+      "source": "./",
+      "description": "Jira ticket intake gate plus session offload/resume."
+    }
+  ]
+}
