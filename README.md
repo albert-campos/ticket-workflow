@@ -15,7 +15,7 @@ made. `intake` surfaces the first; `offload`/`resume` survive the second.
 ## Install
 
 ```
-/plugin marketplace add <your-github-user>/ticket-workflow
+/plugin marketplace add albert-campos/ticket-workflow
 /plugin install ticket-workflow
 ```
 
