@@ -107,7 +107,7 @@ Formatting rules that matter more than the template:
 - **One line per idea.** Never wrap a paragraph inside a label column.
 - **Unknowns are the payload.** Each numbered, each independently answerable. If an unknown
   is really a blocked action, say who has to unblock it.
-- Put dates inline with the claim they support (`scope reversed 2026-09-21 — Ryan Horton`),
+- Put dates inline with the claim they support (`scope reversed 2026-09-21 — @reviewer`),
   not in a trailing clause.
 - Keep `Goal` under three sentences. Detail belongs in the comments section.
 - If ticket text arrived garbled or truncated, say so on its own line and offer to re-fetch.
